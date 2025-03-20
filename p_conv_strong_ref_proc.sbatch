@@ -15,7 +15,7 @@
 # and M associated reference trajectories computed using the 1st strong order 2nd splitting order scheme.
 # These trajectories are then used to measure the accuracy of the high-order stochastic schemes.
 #
-# This is a slurm script for an HPC.
+# This is a slurm script for HPC.
 # Command to compile the cpp-script:
 # g++ -std=c++17 -fext-numeric-literals -o p_conv_strong_ref_proc.out p_conv_strong_ref_proc.cpp methods_particle.cpp -lquadmath -lm
 # Note that the cpp-script uses quadmath library that guarantees quadruple-precision arithmetics.
