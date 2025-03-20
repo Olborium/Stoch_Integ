@@ -35,4 +35,5 @@ The code and testing routines for the paper 2503.xxxxx.
   measure the decay times from the initial state of thermal equilibrium around the false vacuum; measure the decay rate from the solve of the survival probability:
 
   _decay_rate.sbatch -> decay_rate.cpp_
+  
   _decay_rate.py_
