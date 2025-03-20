@@ -4,7 +4,7 @@
 #
 # The script reads field power spectra of stochastic solutions computed with different time steps.
 # At each time step, it computes the average and the variance of the observable constructed from the long Fourier modes of the field.
-# The linear fit is made in the log-log scale and the rate of convergence to the theory value TEMP is measured.
+# The linear fit is made in the log-log scale and the rate of convergence to the theory value is measured.
 
 import re 
 import os
