@@ -44,8 +44,8 @@ int main(int argc, char* argv[])
 		sol.ps(phi_k2, 0);
 		sol.ps(chi_k2, 1);
 		for (int j = 0; j < N_x; j++) {
-			power_spectrum_phi[n][j] += phi_k2[j];
-			power_spectrum_chi[n][j] += chi_k2[j];
+			power_spectrum_phi[n][j] = phi_k2[j];
+			power_spectrum_chi[n][j] = chi_k2[j];
 		}
 	}
 //  save the data:	
