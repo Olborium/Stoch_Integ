@@ -5,7 +5,7 @@
 ###########################
 #
 # The script tests the accuracy of the high-order stochastic schemes.
-# It uses an ensemble of M reference Brownian processes and stochastic trajectories obtained with the 1st order method
+# It uses an ensemble of M reference Brownian processes and stochastic trajectories obtained with the Euler-Maruyama method
 # at small time step dt.
 # The white noise is coarse-grained to a larger time step DT and used to produce the solution with the time step DT.
 # The difference between this solution and the reference solution is measured as a function of DT.
