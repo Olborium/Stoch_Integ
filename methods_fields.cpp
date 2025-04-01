@@ -1,16 +1,16 @@
 #include "methods_fields.h"
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-							Constants
+						Constants
 */
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // global constants:
 
 double TEMP;	// temperature
 double SIZE;	// lattice size
-double DX;		// lattice step
+double DX;	// lattice step
 double DT;      // time step
 int N_x;        // number of lattice points
 
@@ -25,11 +25,11 @@ std::vector<std::vector<double>> B = {{1.0L, 0.0L},
 	{0.5153528374311229364, -0.085782019412973646, 0.4415830236164665242, 0.1288461583653841854}
 };
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 					Initial state preparation
 */
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void prepare_in_state_RJ( std::vector<double*> vars, std::vector<fftw_plan> fft_i, std::vector<fftw_plan> fft_f, int sign)
 {
@@ -69,11 +69,11 @@ void prepare_in_state_RJ( std::vector<double*> vars, std::vector<fftw_plan> fft_
 	}
 }
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
-					Evolution
+						Evolution
 */
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 struct S {
 	double d1;
@@ -120,16 +120,16 @@ void evol( 	std::vector<double*> vars, std::vector<fftw_plan> fft_f, std::vector
 			q.d1 = ord_st[0]*std::sqrt(y/(2.0*DX*DT))*n1;
 			q.d2 = ord_st[1]*std::sqrt(y*DT/6.0/DX)/2.0*n2;
 			q.d3 = ord_st[2]*DT*std::sqrt(y*DT/10.0/DX)/12.0*n3;
-      triples[j] = q;
+      			triples[j] = q;
 		}
-    for (int j = 0; j < N_x; j++) {   
-        q3k[j] = triples[j].d3;
-    }
-    fftw_execute(fftq3_i);
-    for (int j = 0; j < N_x; j++) {
-        q3x[j] = q3x[j]*vars[0][j]*vars[0][j]/std::sqrt(N_x);
-    }
-    fftw_execute(fftq3_f);    
+		for (int j = 0; j < N_x; j++) {   
+			q3k[j] = triples[j].d3;
+		}
+    		fftw_execute(fftq3_i);
+		for (int j = 0; j < N_x; j++) {
+			q3x[j] = q3x[j]*vars[0][j]*vars[0][j]/std::sqrt(N_x);
+		}
+    		fftw_execute(fftq3_f);    
   
 		for (int n = 0; n < split_order; n++) {
 	// Kick
@@ -155,7 +155,7 @@ void evol( 	std::vector<double*> vars, std::vector<fftw_plan> fft_f, std::vector
 				double Oej = std::sqrt(std::abs(Oj*Oj-eta*eta/4.0));
 				
 				s.d1 = triples[j].d2 - eta*triples[j].d3;
-        		s.d2 = triples[j].d1 - eta*triples[j].d2 - (Oj*Oj-eta*eta)*triples[j].d3 - 3.0*sign*q3k[j]/std::sqrt(N_x);
+        			s.d2 = triples[j].d1 - eta*triples[j].d2 - (Oj*Oj-eta*eta)*triples[j].d3 - 3.0*sign*q3k[j]/std::sqrt(N_x);
 
 				double a0 = vars[0][j] - sigma*(eta*s.d1+s.d2)/Oj/Oj;
 				double b0 = (vars[1][j]+eta*vars[0][j]/2)/Oej + sigma*(s.d1-eta*(eta*s.d1+s.d2)/2.0/Oj/Oj)/Oej;
@@ -194,11 +194,11 @@ void evol( 	std::vector<double*> vars, std::vector<fftw_plan> fft_f, std::vector
 	decay_times.push_back(decay_time);
 }
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 					Properties of the state
 */
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void take_spectrum(std::vector<double>& phi_k2, std::vector<double*> vars, double* var_k, std::vector<fftw_plan> fft_xk, int n)
 {
@@ -234,11 +234,11 @@ double energy_potential(std::vector<double*> vars, int sign)
 	return energy;		
 }
 
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /*
 						Methods of classes
 */
-////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BasicObjects::BasicObjects() {
 
