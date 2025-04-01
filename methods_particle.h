@@ -45,7 +45,7 @@ class Evolve : public BasicObjects {
     
     public:
 
-		lfloat eta;             // damping coefficient
+	lfloat eta;             // damping coefficient
         lfloat dt;              // time step of the reference Brownian process
         int split_order;        // order of splitting of the symplectic scheme
         int stoch_order;        // order of strong convergence
