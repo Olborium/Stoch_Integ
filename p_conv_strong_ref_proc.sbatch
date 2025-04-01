@@ -12,7 +12,7 @@
 ###########################
 #
 # The script generates M=10 reference Brownian processes with time step dt = SIMTIME / N
-# and M associated reference trajectories computed using the 1st strong order 2nd splitting order scheme.
+# and M associated reference trajectories computed using the Euler-Maruyama method.
 # These trajectories are then used to measure the accuracy of the high-order stochastic schemes.
 #
 # This is a slurm script for HPC.
@@ -20,10 +20,10 @@
 # g++ -std=c++17 -fext-numeric-literals -o p_conv_strong_ref_proc.out p_conv_strong_ref_proc.cpp methods_particle.cpp -lquadmath -lm
 # Note that the cpp-script uses quadmath library that guarantees quadruple-precision arithmetics.
 
-Q0=2				# initial coordinate
-P0=2				# initial momentum
-TEMP=1  			# temperature
-ETA=10  			# damping coefficient
+Q0=2				        # initial coordinate
+P0=2				        # initial momentum
+TEMP=1  			      # temperature
+ETA=10  			      # damping coefficient
 SIMTIME=100         # simulation time
 SAMPLES=100         # number of sample points (q,p) of a trajectory which are saved to a file
                     # the samples are uniformly distributed between 0 and SIMTIME
