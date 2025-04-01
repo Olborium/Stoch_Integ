@@ -40,7 +40,7 @@ declare -a Ts=("10.0" "9.8" "10.0" "10.0" "9.9" "10.0" "10.0" "9.8" "10.0" "10.0
 # generate the power spectra in 20 independent runs (run 500 copies of the script to reach the total number of samples 500000):
 for ((i=0; i<20; i++)); do
 	for ((j=0; j<N; j++)); do 
-		./conv_weak_temp.out $SIZE $N_x ${DTs[$j]} $J $N_SAMPLE ${Ts[$j]} $BETA $GAMMA $TEMP $ETA $SIGN
+		./conv_weak_temp.out $SIZE $N_x ${DTs[$j]} $N_SAMPLE ${Ts[$j]} $BETA $GAMMA $TEMP $ETA $SIGN
 	done
 done
 # measure the field power spectrum:
