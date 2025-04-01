@@ -87,7 +87,8 @@ def Gamma1(i, tMin=200, log_P_max=2):
     tMax = t_l[i][iMax]
     num = ((Times[i]>tMin)&(Times[i]<tMax)).sum()
     Gamma = - (np.log(Psurv[i,iMax])-np.log(Psurv[i,iMin]))/(tMax-tMin)
-    Gamma_e = Gamma/np.sqrt(num)*np.sqrt((np.exp(Gamma*tMax)-1)/Gamma/tMax)
+    Gamma_e = Gamma/np.sqrt(num) # Simple error estimation
+  # Gamma_e = Gamma/np.sqrt(num)*np.sqrt((np.exp(Gamma*tMax)-1)/Gamma/tMax) # More precise error estimation, see Appendix D of 2408.06411
     return (Gamma, Gamma_e)
     
 (Gamma, Gamma_e) = (np.zeros(M), np.zeros(M))
