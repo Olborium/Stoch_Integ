@@ -6,6 +6,7 @@
 # At each time step, it computes the average and the variance of the observable constructed from the long Fourier modes of the field.
 # The linear fit is made in the log-log scale and the rate of convergence to the theory value is measured.
 
+#%%
 import re 
 import os
 import sys
@@ -21,7 +22,6 @@ SIZE = 100
 N_x = 8192
 N_SAMPLE = 52
 BETA = 4
-
 TEMP = 0.1
 ETA = 1
 SIGN = 1
