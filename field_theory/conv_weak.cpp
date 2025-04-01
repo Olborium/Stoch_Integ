@@ -20,6 +20,7 @@ int main(int argc, char* argv[])
 	int stoch_order = std::stoi(argv[7]);
 	TEMP = std::stod(argv[8]);	
 	double eta = std::stod(argv[9]);
+	int sign = std::stoi(argv[10]);
 	DX = SIZE/N_x;
 ///////////////////////////////////////////////////// 	
 	std::vector<double> decay_times;
