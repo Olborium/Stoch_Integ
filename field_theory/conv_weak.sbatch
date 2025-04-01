@@ -23,7 +23,7 @@
 SIZE=100                       # lattice size
 N_x=8192                       # number of lattice points
 
-N_SAMPLE=50                    # number of samples
+N_SAMPLE=52                    # number of samples
 
 BETA=4                         # splitting order 
 GAMMA=3 		       # strong order
