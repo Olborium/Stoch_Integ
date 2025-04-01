@@ -36,8 +36,10 @@ The code and testing routines for the paper 2503.xxxxx.
     _conv_weak_power_spectrum.py_
 
 - Run a series of real-time stochastic simulations of the real scalar field with quartic self-interaction (unstable potential) in 1+1 dimensions;
-  measure the decay times from the initial state of thermal equilibrium around the false vacuum; measure the decay rate from the solve of the survival probability:
+  measure the decay times from the initial state of thermal equilibrium around the false vacuum; measure the decay rate from the slope of the survival probability:
 
     _decay_rate.sbatch -> decay_rate.cpp_
   
-    _decay_rate.py_
+    _decay_rate_conv.py_
+
+    _decay_rate_full.py_
