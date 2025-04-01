@@ -15,18 +15,18 @@
 #include <stdexcept>
 #include <fftw3.h>
 
-extern double TEMP;             // temperature in units of \lambda*T/m^3	
-extern double SIZE;             // lattice size					
-extern double DX;               // lattice step				
+extern double TEMP;             // temperature (in units of m^3/l, where l is the quartic coupling, m is the field mass)	
+extern double SIZE;             // lattice size	(in units of inverse field mass)				
+extern double DX;               // lattice step		
 extern int N_x;                 // number of lattice points; x_{N_x} \equiv x_0; N_x must be power of 2.				
-extern double DT;               // time step				
+extern double DT;               // time step	
 
 class BasicObjects {
 
     public:
 
         double* var_k;
-        std::vector<double*> vars;                  // pointers to the variables (phi, pi)
+        std::vector<double*> vars;                  // pointers to the variables [field, momentum]
         std::vector<fftw_plan> fft_f;               
         std::vector<fftw_plan> fft_i;
         std::vector<fftw_plan> fft_xk;
@@ -63,6 +63,7 @@ class Evolve : public InitialState {
         void ps(std::vector<double>&, int);         // power spectrum
 };
 
+// save data to file
 template <typename... Args>
 void save_data(int prec, std::vector<double>& data, const std::string& name, Args&&... args)
 {
