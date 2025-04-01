@@ -31,7 +31,8 @@ int main(int argc, char* argv[])
         sol.evolve(decay_times, timespan);    // evolve the state for t=timespan or until the decay
         }                                     // if no decay, the decay time is set to zero
     std::random_device rd;
-    save_data(2, decay_times, "Out/times/times", DT, TEMP, eta, rd());    // save the decay times 
+    int seed = std::abs(rd());
+    save_data(2, decay_times, "Out/times/times", DT, TEMP, eta, seed);    // save the decay times 
 
     return 0;
 }
