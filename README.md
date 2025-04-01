@@ -29,11 +29,15 @@ The code and testing routines for the paper 2503.xxxxx.
 - Run a series of real-time stochastic simulations of the real scalar field with quartic self-interaction (stable potential) in 1+1 dimensions;
   measure the thermodynamic observables and compare them with the theory predictions; measure the rate of weak convergence with respect to these observables:
   
-    _conv_weak.sbatch -> conv_weak.cpp, conv_weak_temp.py, conv_weak_power_spectrum.py_
+    _conv_weak.sbatch -> conv_weak.cpp_
+
+    _conv_weak_temp.py_
+
+    _conv_weak_power_spectrum.py_
 
 - Run a series of real-time stochastic simulations of the real scalar field with quartic self-interaction (unstable potential) in 1+1 dimensions;
   measure the decay times from the initial state of thermal equilibrium around the false vacuum; measure the decay rate from the solve of the survival probability:
 
-  _decay_rate.sbatch -> decay_rate.cpp_
+    _decay_rate.sbatch -> decay_rate.cpp_
   
-  _decay_rate.py_
+    _decay_rate.py_
