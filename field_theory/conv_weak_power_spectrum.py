@@ -17,19 +17,17 @@ plt.rcParams.update({
     "font.family": "serif",
 })
 
-SIZE = float(sys.argv[1])
-N_x = int(sys.argv[2])
-N_SAMPLE = int(sys.argv[3])
-BETA = int(sys.argv[4])
-GAMMA = int(sys.argv[5])
-TEMP = float(sys.argv[6])
-ETA = float(sys.argv[7])
-N = int(sys.argv[8])
-DTs = np.zeros(N)
-Ts = np.zeros(N)
-for i in range(N):
-    DTs[i] = float(sys.argv[i+9])
-    Ts[i] = float(sys.argv[i+9+N])
+SIZE = 100
+N_x = 8192
+N_SAMPLE = 52
+BETA = 4
+
+TEMP = 0.1
+ETA = 1
+SIGN = 1
+N = 8
+DTs = np.array([0.05, 0.07, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7])
+Ts = np.array([0.5, 0.49, 0.5, 0.6, 0.6, 0.8, 1.0, 1.4])
 
 DX = SIZE/N_x
 
