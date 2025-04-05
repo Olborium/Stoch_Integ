@@ -83,10 +83,10 @@ for w in range(2):
         for filename in files:
             if re.match(str,filename):
                 filepath = os.path.join(path,filename)
-                ps = np.loadtxt(filepath,usecols=range(k_max))
+                ps = np.loadtxt(filepath,usecols=range(j_trunc))
 
                 for j in np.arange(N_min,N_SAMPLE,1):
-                    ps_phi += [DX*np.sum(ps[j][:])/k_max]
+                    ps_phi += [DX*np.sum(ps[j][:])/j_trunc]
 
         SimNo = len(ps_phi)
         ps_phi = np.array(ps_phi)
