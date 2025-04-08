@@ -1,6 +1,6 @@
 ## Stoch_Integ
 
-The code and testing routines for the paper 2503.xxxxx.
+The code and testing routines for the paper 2504.03844.
 
 # Strong convergence tests
 
